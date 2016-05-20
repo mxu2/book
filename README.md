@@ -73,11 +73,12 @@ VSB and VIP could be created in workbench UI environment as well as command line
 ### Run image and view the visualization
 
 Run image with Bluemix SDK and view the visualization at the web site of IBM Bluemix. <br>
-    * For quickstart connection, view connection status at: <br>
-    'https://quickstart.internetofthings.ibmcloud.com/#/device/' <br>
+    * For quickstart connection
+    View connection status at: 'https://quickstart.internetofthings.ibmcloud.com/#/device/' <br>
     Note: The device MAC address needs to be entered in this page, and it must be in lower case. <br>
-    * For registered connection, view the device connection status at  <br>
-    'https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse'.<br>
+    
+    * For registered connection
+    View the device connection status at:'https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse'.<br>
      Replace ${ORG_ID} with your real organization id registered in IBM Bluemix. Just like: <br>
     'https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse' <br>
     
