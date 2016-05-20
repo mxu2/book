@@ -37,24 +37,25 @@ device. The IBM Bluemix SDK means the IoT embedded C client library for interact
 Watson Internet of Things Platform. The embedded C client library is not provided in VxWorks-7
 RPM packages or DVDs by default.
 
-### 1.  First you must fetch SDK source codes from maintainer web site https://github.com/ibm-messaging/iotf-embeddedc.git.
+## SDK Installation
+    First you must fetch SDK source codes from maintainer web site https://github.com/ibm-messaging/iotf-embeddedc.git.
     And then apply a patch with some tiny changes in order to make Bluemix SDK compatible for VxWorks-7. Some unnecessary
     files are removed from SDK directory. All these steps are executed by running a script setup.sh in bluemix/src directory.
         cd src
         ./setup
 
-### 2.  To create VSB and VIP with IBM Bluemix SDK
+## Create VSB and VIP
 
     VSB and VIP could be created in workbench UI environment as well as command line with vxprj tool,
     Here just list how to create them using vxprj tool, and take itl_quark BSP as an example.
 
-1). VSB create:
+    VSB create:
         vxprj vsb create -force -bsp itl_quark vsb_PENTIUM_32_up -S
         cd vsb_PENTIUM_32_up
         vxprj vsb add IBM_BLUEMIX
         make -j
 
-2). VIP create:
+    VIP create:
         vxprj create -force -vsb vsb_PENTIUM_32_up itl_quark gnu vip_quark_kernel -profile PROFILE_STANDALONE_DEVELOPMENT
         cd vip_quark_kernel
         vxprj component add DRV_VXBEND_QRK_GMAC
@@ -83,7 +84,7 @@ RPM packages or DVDs by default.
 
         vxprj build
 
-3). To set up secure connection over SSL, First you need to include OPENSSL layer in VSB, as follow,
+    To set up secure connection over SSL, First you need to include OPENSSL layer in VSB, as follow,
         vxprj vsb add OPENSSL
 
     After doing that, you can set BLUEMIX_SECURE_CONNECTION to TRUE or FALSE in VIP, to decide
@@ -95,7 +96,7 @@ RPM packages or DVDs by default.
       or
         vxprj parameter set BLUEMIX_SECURE_CONNECTION   FALSE
 
-4). The Bluemix sample could also be run in user space. A Bluemix rtp file bluemix.vxe is generated in 
+    The Bluemix sample could also be run in user space. A Bluemix rtp file bluemix.vxe is generated in 
     ${VSB_DIR}/usr/root/gnu/bin when building VSB. To auto-spawn the DEMO in RTP space, you need to add
     INCLUDE_ROMFS component, then set parameter BLUEMIX_RTP_APP as TRUE, and set BLUEMIX_RTP_PATH as 
     "/romfs/bluemix.vxe". You need to enter instructions as follow:
@@ -107,16 +108,13 @@ RPM packages or DVDs by default.
         vxprj build
     Now you can bring up the board, and it will auto-run Bluemix SDK in user space.
 
-3.  Run image with Bluemix SDK and view the visualization at the web site of IBM Bluemix.
-    1) For quickstart connection, view connection status at:
-        https://quickstart.internetofthings.ibmcloud.com/#/device/
+### Run image and view the visualization
+    Run image with Bluemix SDK and view the visualization at the web site of IBM Bluemix.
+    * For quickstart connection, view connection status at: https://quickstart.internetofthings.ibmcloud.com/#/device/
     Note: The device MAC address needs to be entered in this page, and it must be in lower case.
-
-    2) For registered connection, view the device connection status at:
-        https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse
-       Replace ${ORG_ID} with your real organization id registered in IBM Bluemix.Just like:
-        https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse
-
-    3) You can also create Node-red application in IBM Bluemix platform, in order to do more implements.
-       View Bluemix cloud application dashboard at:
+    
+    * For registered connection, view the device connection status at:https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse. 
+    Replace ${ORG_ID} with your real organization id registered in IBM Bluemix.Just like: https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse
+        
+    You can also create Node-red application in IBM Bluemix platform, in order to do more implements.View Bluemix cloud application dashboard at:
         https://console.ng.bluemix.net/?direct=classic/#/resources
