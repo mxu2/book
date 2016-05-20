@@ -76,6 +76,7 @@ Run image with Bluemix SDK and view the visualization at the web site of IBM Blu
     * For quickstart connection, view connection status at: https://quickstart.internetofthings.ibmcloud.com/#/device/
     Note: The device MAC address needs to be entered in this page, and it must be in lower case. <br>
     
-    * For registered connection, view the device connection status　at:'https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse'.Replace ${ORG_ID} with your real organization id registered in IBM Bluemix.Just like: 'https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse' <br>
+    * For registered connection, view the device connection status　at:'https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse'.Replace ${ORG_ID} with your real organization id registered in IBM Bluemix. Just like: <br>
+    'https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse' <br>
     
 You can also create Node-red application in IBM Bluemix platform, in order to do more implements.View Bluemix cloud application dashboard at:'https://console.ng.bluemix.net/?direct=classic/#/resources' <br>
