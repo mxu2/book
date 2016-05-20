@@ -14,8 +14,8 @@ RPM packages or DVDs by default. Need to install this library on VxWorks-7.
 ### Installation
 
 Before using this SDK in VxWorks-7, first you must fetch SDK source codes from maintainer web site 'https://github.com/ibm-messaging/iotf-embeddedc.git'. And must apply a patch with some tiny changes in order to make Bluemix SDK compatible for VxWorks-7. Some unnecessary files are removed from SDK directory. All these steps are executed by running a script setup.sh in bluemix/src directory. <br>
-    cd src <br>
-    ./setup.sh <br>
+        cd src <br>
+        ./setup.sh <br>
   
 ### VSB and VIP creation
 
@@ -58,7 +58,7 @@ VSB and VIP could be created in workbench UI environment as well as command line
         vxprj parameter set BLUEMIX_CAFILE_PATH         "/romfs/SSLCACert.pem" <br>
         mkdir romfs <br>
         cp bluemix/certs/SSLCACert.pem                  ${VIP_DIR}/romfs <br>
-      or <br>
+    or <br>
         vxprj parameter set BLUEMIX_SECURE_CONNECTION   FALSE <br>
         
     The Bluemix sample could also be run in user space. A Bluemix rtp file bluemix.vxe is generated in  ${VSB_DIR}/usr/root/gnu/bin when building VSB. To auto-spawn the DEMO in RTP space, you need to add INCLUDE_ROMFS component, then set parameter BLUEMIX_RTP_APP as TRUE, and set BLUEMIX_RTP_PATH as "/romfs/bluemix.vxe". You need to enter instructions as follow: <br>
@@ -71,13 +71,11 @@ VSB and VIP could be created in workbench UI environment as well as command line
     Now you can bring up the board, and it will auto-run Bluemix SDK in user space. <br>
 
 ### Run image and view the visualization
-    Run image with Bluemix SDK and view the visualization at the web site of IBM Bluemix. <br>
+
+Run image with Bluemix SDK and view the visualization at the web site of IBM Bluemix. <br>
     * For quickstart connection, view connection status at: https://quickstart.internetofthings.ibmcloud.com/#/device/
     Note: The device MAC address needs to be entered in this page, and it must be in lower case. <br>
     
-    * For registered connection, view the device connection status at:'https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse'.Replace ${ORG_ID} with your real organization id registered in IBM Bluemix.Just like: 'https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse'
+    * For registered connection, view the device connection status　at:'https://${ORG_ID}.internetofthings.ibmcloud.com/dashboard/#/devices/browse'.Replace ${ORG_ID} with your real organization id registered in IBM Bluemix.Just like: 'https://8hvetd.internetofthings.ibmcloud.com/dashboard/#/devices/browse' <br>
     
-    You can also create Node-red application in IBM Bluemix platform, in order to do more implements.View Bluemix cloud application dashboard at:'https://console.ng.bluemix.net/?direct=classic/#/resources'
-
-
-
+You can also create Node-red application in IBM Bluemix platform, in order to do more implements.View Bluemix cloud application dashboard at:'https://console.ng.bluemix.net/?direct=classic/#/resources' <br>
